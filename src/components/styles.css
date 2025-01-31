@@ -1,0 +1,310 @@
+/* Общие стили */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f0f2f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Контейнер, имитирующий мобильный телефон */
+.phone-container {
+  width: 360px;
+  height: 700px;
+  background: #fff;
+  border-radius: 30px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Заголовок чата */
+.chat-header {
+  background: #075e54;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Контейнер сообщений */
+.chat-messages {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  background: #e5ddd5;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 800 800'%3E%3Cg %3E%3Ccircle fill='%23e5ddd5' cx='400' cy='400' r='600'/%3E%3Ccircle fill='%23d5ccc4' cx='400' cy='400' r='500'/%3E%3Ccircle fill='%23c5bbb4' cx='400' cy='400' r='400'/%3E%3Ccircle fill='%23b5aba4' cx='400' cy='400' r='300'/%3E%3Ccircle fill='%23a59b94' cx='400' cy='400' r='200'/%3E%3Ccircle fill='%23958b84' cx='400' cy='400' r='100'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: cover;
+}
+
+/* Пузырьки сообщений */
+.message {
+  max-width: 70%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  position: relative;
+  word-wrap: break-word;
+}
+
+.message.sender {
+  background: #dcf8c6;
+  margin-left: auto;
+}
+
+.message.recipient {
+  background: #fff;
+  margin-right: auto;
+}
+
+/* Панель ввода сообщений */
+.chat-input {
+  display: flex;
+  padding: 10px;
+  background: #f0f0f0;
+  border-top: 1px solid #ddd;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  outline: none;
+}
+
+.chat-input button {
+  background: #075e54;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  margin-left: 10px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.chat-input button:hover {
+  background: #054d43;
+}
+
+/* Стили для иконки контактов */
+.contacts-icon {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  color: #075e54;
+  font-size: 24px;
+}
+
+/* Стили для модального окна */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 280px; /* Уменьшили ширину */
+  text-align: center;
+  position: relative;
+  box-sizing: border-box; /* Чтобы padding не увеличивал ширину */
+}
+
+.modal-content input {
+  width: calc(100% - 20px); /* Учитываем padding */
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box; /* Чтобы padding не увеличивал ширину */
+}
+
+.modal-content button {
+  width: calc(100% - 20px); /* Учитываем padding */
+  padding: 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background: #075e54;
+  color: white;
+  box-sizing: border-box; /* Чтобы padding не увеличивал ширину */
+}
+
+.modal-content button:hover {
+  background: #054d43;
+}
+
+
+/* Стили для списка контактов */
+.contact-list {
+  max-height: 200px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+}
+
+.contact-item {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+}
+
+.contact-item:hover {
+  background: #f0f0f0;
+}
+/* Стили для модального окна */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  text-align: center;
+  position: relative;
+}
+
+.modal-content input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.modal-content button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background: #075e54;
+  color: white;
+}
+
+.modal-content button:hover {
+  background: #054d43;
+}
+
+/* Крестик для закрытия модального окна */
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  color: #555;
+}
+
+/* Время в сообщениях */
+.message-time {
+  font-size: 12px;
+  color: #666;
+  margin-left: 10px;
+}
+
+.message.sender .message-time {
+  text-align: right;
+}
+
+.message.recipient .message-time {
+  text-align: left;
+}
+/* Стили для страницы логина */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #075e54, #128c7e);
+}
+
+.login-form {
+  background: white;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.login-form h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #075e54;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.login-form input:focus {
+  border-color: #128c7e;
+}
+
+.login-form button {
+  width: 100%;
+  padding: 12px;
+  background: #128c7e;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.login-form button:hover {
+  background: #075e54;
+}
+
+.login-form button:active {
+  transform: scale(0.98);
+}
+
+.login-form p {
+  margin-top: 20px;
+  color: #666;
+}
+
+.login-form a {
+  color: #128c7e;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.login-form a:hover {
+  text-decoration: underline;
+}
