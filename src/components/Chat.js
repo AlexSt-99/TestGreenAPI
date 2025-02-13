@@ -16,7 +16,7 @@ const Chat = ({ idInstance, apiTokenInstance }) => {
   ]);
 
   const sendMessage = async () => {
-    const apiUrl = `https://7105.api.greenapi.com/waInstance${idInstance}/sendMessage/${apiTokenInstance}`;
+    const apiUrl = `https://api.greenapi.com/waInstance${idInstance}/sendMessage/${apiTokenInstance}`;
     const payload = {
       chatId: `${recipient}@c.us`,
       message: newMessage,
@@ -35,7 +35,7 @@ const Chat = ({ idInstance, apiTokenInstance }) => {
   };
   
   const receiveMessages = async () => {
-    const apiUrl = `https://7105.api.greenapi.com/waInstance${idInstance}/receiveNotification/${apiTokenInstance}`;
+    const apiUrl = `https://api.greenapi.com/waInstance${idInstance}/receiveNotification/${apiTokenInstance}`;
   
     try {
       const response = await axios.get(apiUrl);
@@ -53,7 +53,7 @@ const Chat = ({ idInstance, apiTokenInstance }) => {
         const receiptId = response.data.receiptId;
         if (receiptId) {
           await axios.delete(
-            `https://7105.api.greenapi.com/waInstance${idInstance}/deleteNotification/${apiTokenInstance}/${receiptId}`
+            `https://api.greenapi.com/waInstance${idInstance}/deleteNotification/${apiTokenInstance}/${receiptId}`
           );
         }
       } else {
